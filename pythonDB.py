@@ -32,7 +32,7 @@ def prediksi_fakultas(biologi, fisika, inggris):
     else:
         return 'Tidak dapat memprediksi'
 
-# Fungsi tombol submit yang akan diinput oleh user, nama menggunakan tipe data string (text)
+# Fungsi tombol submit yang akan diinput oleh user, nama menggunakan tipe data string(text)
 # Sedangkan "nilai" menggunakan tipe data integer/int (numerik) 
 def submit_nilai():
     nama_siswa = entry_nama.get()
