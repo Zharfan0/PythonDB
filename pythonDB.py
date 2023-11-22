@@ -1,4 +1,4 @@
-# Menmasukan library sqlite3 sehingga dapat menyambungkan dengan database
+# Memasukan library sqlite3 sehingga dapat menyambungkan dengan database
 import sqlite3
 
 # Memasukan Tk, Label, Entry, Button dari Library tkinter sehingga dapat memunculkan GUI
