@@ -29,7 +29,7 @@ def prediksi_fakultas(biologi, fisika, inggris):
     else:
         return 'Tidak dapat memprediksi'
 
-# Fungsi untuk menangani tombol submit
+# Fungsi tombol submit
 def submit_nilai():
     nama_siswa = entry_nama.get()
     nilai_biologi = int(entry_biologi.get())
