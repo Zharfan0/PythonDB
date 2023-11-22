@@ -1,4 +1,7 @@
+# Menmasukan library sqlite3 sehingga dapat menyambungkan dengan database
 import sqlite3
+
+# Memasukan Tk, Label, Entry, Button dari Library tkinter sehingga dapat memunculkan GUI
 from tkinter import Tk, Label, Entry, Button
 
 # Membuat koneksi dan cursor SQLite
@@ -18,7 +21,7 @@ cursor.execute('''
 ''')
 conn.commit()
 
-# Fungsi untuk menentukan prediksi fakultas
+# Fungsi untuk menentukan prediksi fakultas dengan ketentuan" yang sudah dibuat
 def prediksi_fakultas(biologi, fisika, inggris):
     if biologi > fisika and biologi > inggris:
         return 'Kedokteran'
@@ -29,7 +32,8 @@ def prediksi_fakultas(biologi, fisika, inggris):
     else:
         return 'Tidak dapat memprediksi'
 
-# Fungsi tombol submit
+# Fungsi tombol submit yang akan diinput oleh user, nama menggunakan tipe data string (text)
+# Sedangkan "nilai" menggunakan tipe data integer/int (numerik) 
 def submit_nilai():
     nama_siswa = entry_nama.get()
     nilai_biologi = int(entry_biologi.get())
@@ -38,14 +42,14 @@ def submit_nilai():
 
     prediksi = prediksi_fakultas(nilai_biologi, nilai_fisika, nilai_inggris)
 
-    # Memasukkan data ke database
+    # Memasukkan data ke database sesuai yang diinput oleh user
     cursor.execute('''
         INSERT INTO nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
         VALUES (?, ?, ?, ?, ?)
     ''', (nama_siswa, nilai_biologi, nilai_fisika, nilai_inggris, prediksi))
     conn.commit()
 
-    # Menampilkan hasil prediksi
+    # Menampilkan hasil prediksi dari input user
     label_hasil.config(text=f'Hasil prediksi fakultas: {prediksi}')
 
 # Membuat GUI dengan Tkinter
