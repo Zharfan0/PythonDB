@@ -86,3 +86,5 @@ root.mainloop()
 
 # Menutup koneksi SQLite setelah GUI ditutup
 conn.clos()
+
+#update coba
